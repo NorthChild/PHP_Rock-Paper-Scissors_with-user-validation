@@ -10,4 +10,4 @@ Part of my uni assignment.
 
 credit to https://github.com/nostalgic-css/NES.css, their CSS framework is awesome, really appreciate the work they've put on this.
 
-not ment for small screens.
+not meant for small screens.
