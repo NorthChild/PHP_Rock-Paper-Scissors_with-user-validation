@@ -9,3 +9,5 @@ In this code, user validation is taken from the "POST" method, stored as user da
 Part of my uni assignment. 
 
 credit to https://github.com/nostalgic-css/NES.css, their CSS framework is awesome, really appreciate the work they've put on this.
+
+not ment for small screens.
