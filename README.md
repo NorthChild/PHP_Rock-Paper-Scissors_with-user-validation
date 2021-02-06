@@ -12,4 +12,4 @@ credit to https://github.com/nostalgic-css/NES.css, their CSS framework is aweso
 
 not meant for small screens.
 
-still need to fix the test part
+still need to fix the test part at the end of the game.php script
