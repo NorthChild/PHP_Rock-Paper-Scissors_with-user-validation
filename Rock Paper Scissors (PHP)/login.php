@@ -11,7 +11,6 @@ $salt = 'XyZzy12*_';
 $md5 = hash('md5', 'XyZzy12*_php123');
 
 $stored_hash = '1a52e17fa899cf40fb04cfc42e6352f1';
-$stored_userName = 'id_1723';
 
 // ############################## Variables ####################################
 
@@ -48,7 +47,7 @@ if (isset($_POST['who']) && isset($_POST['pass'])) {
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="CSS/AssignmentRPC.css">
-    <title>Michael John Carini - ROCK PAPER SCISSORS Assignment, week 8 </title>
+    <title>Michael John Carini - ROCK PAPER SCISSORS Assignment</title>
 
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
