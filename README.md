@@ -11,3 +11,5 @@ Part of my uni assignment.
 credit to https://github.com/nostalgic-css/NES.css, their CSS framework is awesome, really appreciate the work they've put on this.
 
 not meant for small screens.
+
+still need to fix the test part
