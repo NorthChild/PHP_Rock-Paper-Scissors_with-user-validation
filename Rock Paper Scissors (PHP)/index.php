@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Michael John Carini - ROCK PAPER SCISSORS Assignment, week 8 </title>
+    <title>Michael John Carini - ROCK PAPER SCISSORS Assignment</title>
 
     <link rel="stylesheet" href="CSS/AssignmentRPC.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
