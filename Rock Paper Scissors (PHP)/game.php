@@ -18,7 +18,7 @@ $user = $_GET['name'];
 
 // ########################### Game Mechanics ##################################
 
-$rpsChoices = array("Rock", "Paper", "Scissors");
+$rpsChoices = array('Rock', 'Paper', 'Scissors');
 
 $result = '';
 $humanChoice = '';
@@ -69,9 +69,12 @@ if (isset($_POST['human']) && strlen($_POST['human']) !== '') {
   // JUST FOR TESTING PURPOSES
 }
 
-function check($humanChoice, $computerChoice) {
 
-  if ($humanChoice == $computerChoice) {
+//  TO FIX TRY TO INVERT THE PARAMETERS INSIDE THE CHECK FUNCTION AND REMEMBER TO ADJUST THE CHECK FUNCTION TO THE NEW SPECIFICATIONS
+
+function check($computerChoice, $humanChoice) {
+
+  if ($computerChoice == $humanChoice) {
     return "Tie";
 
   } else if (($humanChoice == 'Paper' && $computerChoice == 'Rock') || ($humanChoice == 'Rock' && $computerChoice == 'Scissors') || ($humanChoice == 'Scissors' && $computerChoice == 'Paper')) {
@@ -82,7 +85,9 @@ function check($humanChoice, $computerChoice) {
   }
 }
 
-$r = check($humanChoice, $computerChoice);
+$r = check($computerChoice, $humanChoice);
+
+//  TO FIX TRY TO INVERT THE PARAMETERS INSIDE THE CHECK FUNCTION AND REMEMBER TO ADJUST THE CHECK FUNCTION TO THE NEW SPECIFICATIONS
 
 // ########################### Game Mechanics ##################################
 
@@ -94,7 +99,7 @@ $r = check($humanChoice, $computerChoice);
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="CSS/AssignmentRPC.css">
-    <title>Michael John Carini - ROCK PAPER SCISSORS Assignment</title>
+    <title>Michael John Carini - ROCK PAPER SCISSORS Assignment, week 8 </title>
 
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
@@ -133,12 +138,12 @@ if (!isset($_POST['human']) || $_POST['human'] == -1) {
   for($c=0;$c<3;$c++) {
       for($h=0;$h<3;$h++) {
           $r = check($c, $h);
-          print ($result = "Human=$rpsChoices[$h] Computer=$rpsChoices[$c] Result=$r\n");
+          print "Human=$rpsChoices[$h] Computer=$rpsChoices[$c] Result=$r\n";
       }
   }
 
 } else {
-  $result = "Your Play=$humanChoice Computer Play=$computerChoice Result=$r\n";
+  print "Your Play=$humanChoice Computer Play=$computerChoice Result=$r\n";
 }
 
 echo $result;
