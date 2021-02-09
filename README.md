@@ -1,5 +1,5 @@
 # PHP_Rock-Paper-Scissors_with-user-validation
-Rock Paper Scissors game with user validation, salt encryption and simple game mechanics
+Rock Paper Scissors game with user validation, filtering, salt encryption and simple game mechanics
 
 
 input the user name and password (hidden in the source code) to play rock paper scissors.
