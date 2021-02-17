@@ -10,6 +10,6 @@ Part of my uni assignment.
 
 credit to https://github.com/nostalgic-css/NES.css, their CSS framework is awesome, really appreciate the work they've put on this.
 
-not meant for small screens.
+not meant for phone screens, but might work on small desktops
 
 still need to fix the test part at the end of the game.php script
