@@ -24,8 +24,6 @@ $result = '';
 $humanChoice = '';
 $computerChoice = '';
 
-// computer choice made into variable
-
 // Set up the values for the game...
 // 0 is Rock, 1 is Paper, and 2 is Scissors
 $names = array('Rock', 'Paper', 'Scissors');
