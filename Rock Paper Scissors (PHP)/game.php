@@ -25,69 +25,30 @@ $humanChoice = '';
 $computerChoice = '';
 
 // computer choice made into variable
-$computerChoice = rand(0, 2);
 
-if (isset($_POST['human']) && strlen($_POST['human']) !== '') {
+// Set up the values for the game...
+// 0 is Rock, 1 is Paper, and 2 is Scissors
+$names = array('Rock', 'Paper', 'Scissors');
+$human = isset($_POST["human"]) ? $_POST['human']+0 : -1;
 
-  // human choice made into variable
-  if ($_POST['human'] == -1) {
-    $humanChoice = 'Select';
-  }
-  if ($_POST['human'] == 0) {
-    $humanChoice = $rpsChoices['0'];
-  }
-  if ($_POST['human'] == 1) {
-    $humanChoice = $rpsChoices['1'];
-  }
-  if ($_POST['human'] == 2) {
-    $humanChoice = $rpsChoices['2'];
-  }
-  if ($_POST['human'] == 3) {
-    $humanChoice = 'Test';
-  }
+$computer = 0;
+$computer = rand(0,2);
 
-  // JUST FOR TESTING PURPOSES
-  // JUST FOR TESTING PURPOSES
-  // echo 'HUMAN = '.$humanChoice."<br>";
-  // JUST FOR TESTING PURPOSES
-  // JUST FOR TESTING PURPOSES
-
-  if ($computerChoice == 0) {
-    $computerChoice = $rpsChoices['0'];
-  }
-  if ($computerChoice == 1) {
-    $computerChoice = $rpsChoices['1'];
-  }
-  if ($computerChoice == 2) {
-    $computerChoice = $rpsChoices['2'];
-  }
-
-  // JUST FOR TESTING PURPOSES
-  // JUST FOR TESTING PURPOSES
-  // echo 'CPU = '.$computerChoice."<br>";
-  // JUST FOR TESTING PURPOSES
-  // JUST FOR TESTING PURPOSES
+function check($computer, $human) {
+    if ( $human == $computer ) {
+        return "Tie";
+    } else if ( ($human == 0 && $computer == 1) ||
+                ($human == 1 && $computer == 2) ||
+                ($human == 2 && $computer == 0)) {
+        return "You Lose";
+    } else {
+        return "You Win";
+    }
+    return false;
 }
 
+$result = check($computer, $human);
 
-//  TO FIX TRY TO INVERT THE PARAMETERS INSIDE THE CHECK FUNCTION AND REMEMBER TO ADJUST THE CHECK FUNCTION TO THE NEW SPECIFICATIONS
-
-function check($computerChoice, $humanChoice) {
-
-  if ($computerChoice == $humanChoice) {
-    return "Tie";
-
-  } else if (($humanChoice == 'Paper' && $computerChoice == 'Rock') || ($humanChoice == 'Rock' && $computerChoice == 'Scissors') || ($humanChoice == 'Scissors' && $computerChoice == 'Paper')) {
-    return "You Win";
-
-  } else {
-    return "You Lose";
-  }
-}
-
-$r = check($computerChoice, $humanChoice);
-
-//  TO FIX TRY TO INVERT THE PARAMETERS INSIDE THE CHECK FUNCTION AND REMEMBER TO ADJUST THE CHECK FUNCTION TO THE NEW SPECIFICATIONS
 
 // ########################### Game Mechanics ##################################
 
@@ -129,24 +90,18 @@ $r = check($computerChoice, $humanChoice);
 
 <?php
 
-if (!isset($_POST['human']) || $_POST['human'] == -1) {
-
-  $result = "Please select a strategy and press Play.";
-
-} else if ($humanChoice == 'Test') {
-
-  for($c=0;$c<3;$c++) {
-      for($h=0;$h<3;$h++) {
-          $r = check($c, $h);
-          print "Human=$rpsChoices[$h] Computer=$rpsChoices[$c] Result=$r\n";
-      }
-  }
-
+if ( $human == -1 ) {
+    print "Please select a strategy and press Play.\n";
+} else if ( $human == 3 ) {
+    for($c=0;$c<3;$c++) {
+        for($h=0;$h<3;$h++) {
+            $r = check($c, $h);
+            print "Human=$names[$h] Computer=$names[$c] Result=$r\n";
+        }
+    }
 } else {
-  print "Your Play=$humanChoice Computer Play=$computerChoice Result=$r\n";
+    print "Your Play=$names[$human] Computer Play=$names[$computer] Result=$result\n";
 }
-
-echo $result;
 
 ?>
 
